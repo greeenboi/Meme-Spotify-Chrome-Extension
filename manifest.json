@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Spotify GIF Display",
+    "version": "1.0.0",
+    "description": "Extension to memeify spotify",
+    "author": "greeenboi",
+    "homepage_url": "https://github.com/greeenboi/",
+
+
+    "host_permissions": [
+      "https://open.spotify.com/*"
+    ],
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "action" : {
+      "default_icon": {
+        "48": "images/off.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.spotify.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
